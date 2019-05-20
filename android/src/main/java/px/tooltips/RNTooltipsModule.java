@@ -26,7 +26,7 @@ public class RNTooltipsModule extends ReactContextBaseJavaModule {
     this.reactContext = reactContext;
   }
 
-  @Overrides
+  //@Overrides
   public String getName() {
     return "RNTooltips";
   }
