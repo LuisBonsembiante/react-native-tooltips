@@ -26,7 +26,7 @@ public class RNTooltipsModule extends ReactContextBaseJavaModule {
     this.reactContext = reactContext;
   }
 
-  @Override
+  @Overrides
   public String getName() {
     return "RNTooltips";
   }
@@ -38,7 +38,7 @@ public class RNTooltipsModule extends ReactContextBaseJavaModule {
         @Override
         public void execute(NativeViewHierarchyManager nativeViewHierarchyManager) {
 
-          final ViewGroup target = (ViewGroup) nativeViewHierarchyManager.resolveView(targetId);
+          final View target = (View) nativeViewHierarchyManager.resolveView(targetId);
 
           reactContext.runOnUiQueueThread(new Runnable() {
             @Override
@@ -115,7 +115,7 @@ public class RNTooltipsModule extends ReactContextBaseJavaModule {
       });
 
 
-  
+
   }
 
   @ReactMethod

@@ -3,7 +3,14 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://maven.google.com" }
+        mavenLocal()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven {
+            url "https://maven.google.com"
+        }
         jcenter()
     }
 
@@ -12,11 +19,27 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven {
+            url "https://maven.google.com"
+        }
+        jcenter()
+    }
+}
+
 apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '28.0.2'
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 16
@@ -31,10 +54,14 @@ android {
 
 repositories {
     mavenCentral()
+    jcenter()
+    google()
     maven { url "https://maven.google.com" }
 }
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation 'com.github.florent37:viewtooltip:1.1.6'
+
+
 }
