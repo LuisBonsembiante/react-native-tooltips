@@ -15,6 +15,7 @@
     "url": "https://github.com/prscX/react-native-tooltips.git"
   },
   "dependencies": {
+    "pod-installer": "0.0.0"
   },
   "devDependencies": {
     "prettier-pack": "0.0.8"
